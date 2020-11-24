@@ -6,3 +6,62 @@
     background-color: #ffffff;
 }
 
+@mixin mobileView($card_width,$card_bottom_margin,$float_margin_left,$float_width) {
+    .mobile_menu_icon{
+        display:block;
+        .fa{
+          color:#ffffff;
+        }
+      .mobile_menu{
+        position: absolute;
+        display: none;
+        z-index: 1;
+        right: 5px;
+        ul{
+          background-color: $primary_color;
+           li{
+            padding: 20px;
+            border-bottom: 1px solid #05164e;
+            list-style: none;
+            a{
+              color: #ffffff;
+              text-decoration: none;
+            }
+           }
+        }
+      }
+      }
+        .float_box{
+          position: unset;
+          display: flex;
+          flex-wrap: wrap;
+          width:$float_width;
+          margin-left:$float_margin_left;
+          .card{
+            width:$card_width;
+            margin-bottom:$card_bottom_margin;
+          }
+        }
+        .container{
+          display: inline;
+          height: auto;
+          &_text_block{
+          &_title{
+            text-align: center;
+          }
+          &_para{
+            padding:20px;
+          }
+        }
+          &_left_block{
+            img{
+              max-width: 100%;
+              max-height: 100vh;
+              margin: auto;
+            }
+          }
+          &_right_block_menu{
+            display:none;
+          }
+        }
+}
