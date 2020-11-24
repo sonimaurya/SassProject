@@ -66,3 +66,23 @@
           }
         }
 }
+
+
+@mixin text_box_icon($padding,$margin,$transform,$color){
+    padding:$padding;
+    margin:$margin;
+    width: 100px;
+ height: 100px;
+ background: $color;
+ border-radius: 13px;
+ transform: $transform;
+ position: relative;
+ display: flex;
+ justify-content: center;
+}
+
+@mixin fa_icon($size,$color,$transform){
+    font-size:$size;
+    color:$color;
+    transform: $transform;
+}
