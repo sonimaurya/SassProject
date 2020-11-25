@@ -6,7 +6,16 @@
     background-color: #ffffff;
 }
 
-@mixin mobileView($card_width,$card_bottom_margin,$float_margin_left,$float_width) {
+@mixin footer_menu_layout($flex_justify) {
+  display:flex;
+  flex-direction: column;
+  justify-content: $flex_justify;
+  background-color:$primary_color;
+  width: 33%;
+  padding: 10px 50px;
+}
+
+@mixin mobileView($card_width,$card_bottom_margin,$float_margin_left,$float_width,$top) {
     .mobile_menu_icon{
         display:block;
         .fa{
@@ -41,6 +50,9 @@
           .card{
             width:$card_width;
             margin-bottom:$card_bottom_margin;
+            &_footer_text{
+              word-break: break-all;
+            }
           }
         }
         .container{
@@ -65,24 +77,31 @@
             display:none;
           }
         }
+     .we_work{
+      top:$top;
+      position: relative;
+      .we_work_block-1{
+          width: 0;
+          display:none;
+      }
+      .we_work_block-2{
+          width: 100%;
+          &_para{
+            p{
+              padding: 20px;
+            }
+          }
+          &_card_box{
+            flex-direction: column;
+          }
+      }
+      .we_work_block-3{
+        width: 0;
+          display:none;
+      }
+     }
+
+        // how we work section
 }
 
 
-@mixin text_box_icon($padding,$margin,$transform,$color){
-    padding:$padding;
-    margin:$margin;
-    width: 100px;
- height: 100px;
- background: $color;
- border-radius: 13px;
- transform: $transform;
- position: relative;
- display: flex;
- justify-content: center;
-}
-
-@mixin fa_icon($size,$color,$transform){
-    font-size:$size;
-    color:$color;
-    transform: $transform;
-}
