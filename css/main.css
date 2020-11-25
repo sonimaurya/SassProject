@@ -284,6 +284,7 @@ section {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-top: 40px;
+  cursor: pointer;
 }
 
 .text_box_icon_box {
@@ -362,6 +363,10 @@ section {
   color: #2a5391;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.text_box_icon_body .text p {
+  text-align: center;
 }
 
 @media only screen and (min-width: 1280px) and (max-width: 1280px) {
