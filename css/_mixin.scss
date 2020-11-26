@@ -6,16 +6,17 @@
     background-color: #ffffff;
 }
 
-@mixin footer_menu_layout($flex_justify) {
+@mixin footer_menu_layout($flex_justify,$width) {
   display:flex;
   flex-direction: column;
   justify-content: $flex_justify;
   background-color:$primary_color;
-  width: 33%;
+  width: $width;
   padding: 10px 50px;
 }
 
-@mixin mobileView($card_width,$card_bottom_margin,$float_margin_left,$float_width,$top) {
+@mixin mobileView($card_width,$card_bottom_margin,$float_margin_left,$float_width,$top,
+$flex_footer_top_first:column,$flex_footer_top_second:column,$footer_bottom:2141%,$footer_title_span_left:135px) {
     .mobile_menu_icon{
         display:block;
         .fa{
@@ -99,6 +100,67 @@
         width: 0;
           display:none;
       }
+     }
+
+     //footer
+     footer{
+       top:577%;
+       position: relative;
+
+       .footer_heading{
+        margin-top: -60px;
+         h2{
+           span:after{
+            left:$footer_title_span_left; 
+            top: 84px;
+           }
+         }
+       }
+       .footer_menu_box{
+         flex-direction: column;
+         width:100%;
+         .footer_left{
+          flex-direction: column;
+          width: 100%;
+          .top_first{
+            flex-direction: $flex_footer_top_first;
+            width: 100%;
+            .footer_left_menu{
+              width: 100%;
+            }
+            .footer_middle_menu{
+              width: 100%;
+            }
+          }
+          .top_second{
+            flex-direction: $flex_footer_top_second;
+            .footer_social_icon_wrapper{
+              width: 100%;
+              .f_icon_title{
+                margin-right: 0;
+              }
+            }
+            .footer_social_img{
+              width: 100%;
+              text-align: center;
+              margin-top: 20px;
+              margin-left:0;
+            }
+          }
+         }
+         .footer_right_menu{
+             width: 100%;
+             padding:10px 12px;
+             form{
+              input[type=submit]{
+                width: auto;
+              }
+             }
+         }
+       }
+       .footer_bottom{
+        top: $footer_bottom;;
+       }
      }
 
         // how we work section
